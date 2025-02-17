@@ -3,6 +3,8 @@
 ## 🚀 Overview
 Project History App is a Rails application that allows users to leave a comment and change the status of the project. This guide provides step-by-step instructions to set up and run the application locally.
 
+For the questions and answers based on discussion with colleagues, refer Discovery.md file
+
 ---
 
 ## 📌 Prerequisites
