@@ -20,7 +20,7 @@ Ensure you have the following installed:
 Run the following command to clone the project:
 
 ```sh
-git clone <>
+git clone <https://github.com/RamyaPrabha27/projects_history_app.git>
 cd projects_history_app
 ```
 
