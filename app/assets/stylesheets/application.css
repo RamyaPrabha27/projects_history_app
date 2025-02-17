@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.inline-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.inline-form button {
+  display: inline;
+  padding: 1px 3px;
+}
+
+/* This is for aligning the header content */
+.header {
+  display: flex;
+  justify-content: space-between; /* Push the items to the extremes */
+  align-items: center; /* Center the items vertically */
+  padding: 1px 15px; /* Adjust padding as per design */
+  background-color: #f8f9fa; /* Light background for the header */
+}
+
+/* Style for the logout button */
+.logout-btn {
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.logout {
+  margin-left: auto; /* This pushes the logout button to the right */
+}

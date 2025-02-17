@@ -1,0 +1,17 @@
+<!-- app/views/projects/index.html.erb -->
+<h2>All Projects</h2>
+
+<%= link_to 'New Project', new_project_path %>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= project.title %> - <%= project.status.titleize %> 
+      <%= link_to 'View Conversation History', project_conversation_histories_path(project) %> | 
+      <%= link_to 'Edit', edit_project_path(project) %> |
+      <%= form_with url: project_path(project), method: :delete, class: "inline-form" do %>
+        <%= button_tag "Destroy" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

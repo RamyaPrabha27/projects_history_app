@@ -1,0 +1,31 @@
+<h1><%= @project.title %></h1>
+<p><%= @project.description %></p>
+<p>Status: <%= @project.status.titleize %></p>
+
+<h2>Conversation History</h2>
+<ul>
+  <% @conversation_histories.each do |entry| %>
+    <li>
+      <% if entry.comment.present? %>
+        <strong><%= entry.user.name %>:</strong> <%= entry.comment %>
+      <% else %>
+        <em><%= entry.user.name %> changed status to <%= entry.status %></em>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Add a Comment</h2>
+<%= form_with model: [@project, ConversationHistory.new], local: true do |form| %>
+  <%= form.text_area :comment, required: true %>
+  <%= form.submit "Submit Comment" %>
+<% end %>
+  
+<h2>Change Status</h2>
+<%= form_with model: @project, local: true do |form| %>
+  <%= form.select :status, ['pending', 'in_progress', 'completed'] %>
+  <%= form.submit "Update Status" %>
+<% end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back to Projects', projects_path %>

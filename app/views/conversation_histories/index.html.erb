@@ -1,0 +1,21 @@
+<h2>Conversation History for <%= @project.title %> - Current Status: <%= @project.status.titleize %></h2>
+
+<% if @project.conversation_histories.any? %>
+  <ul>
+    <% @project.conversation_histories.each do |history| %>
+      <li>
+        <% if history.comment.present? %>
+          <strong><%= history.user.name %>:</strong> <%= history.comment %>
+        <% else %>
+          <em><%= history.user.name %> changed status to <%= history.status %></em>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No conversation history yet.</p>
+<% end %>
+
+<!-- Button to Add new Comment -->
+<%= link_to 'Add Comment', project_path(@project) %> |
+<%= link_to 'Back to Projects', projects_path %>
